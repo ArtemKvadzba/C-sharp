@@ -11,8 +11,8 @@ namespace CSharp_Shell
         public static void Main() 
         {   
         	
-        	while(true)
-        	{
+           while(true)
+            {
                Console.WriteLine("Введите первое число : \n");
                int num0 = Convert.ToInt32(Console.ReadLine());
                Console.WriteLine("\nВведите второе число : \n");
@@ -24,7 +24,7 @@ namespace CSharp_Shell
                	 break;
               
                }
-        	}
+            }
         }
     }
 }
