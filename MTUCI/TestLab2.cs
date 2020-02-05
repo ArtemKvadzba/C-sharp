@@ -14,7 +14,13 @@ namespace Lab7
     {
         public Form1() { InitializeComponent(); }
 
-        int array_size;
+        int array_size,list_index;
+        Random random_value = new Random();
+
+        int random_array(int size) 
+        {
+
+        }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -30,9 +36,16 @@ namespace Lab7
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedCountry = listBox1.SelectedIndex.ToString();
+            list_index = listBox1.SelectedIndex;
+            if (listBox1.SelectedIndex == 0) 
+            {
+                
+
+            }
             //Написать функцию для случайного массива и для ввода массива вручную
         }
+
+
     }
 
 }
