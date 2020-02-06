@@ -16,18 +16,30 @@ namespace Lab7
 
         int array_size,list_index;
         Random random_value = new Random();
+        int[] array;
 
-        int random_array(int size) 
+        void Random_array()
         {
-
+            for (int counter = 0; counter < array_size; counter++)
+            {
+                 array[counter] = random_value.Next(-100, 100);
+                 textBox2.Text += array[counter] + " ";
+            }
+            
+           
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            array_size = Int32.Parse(textBox1.Text);
+            if(textBox1.Text == "") array_size = Int32.Parse("0");
+            else
+            { 
+               array_size = Int32.Parse(textBox1.Text);
+               array = new int[array_size];
+            }
         }
+       
 
-        
         private void button1_Click(object sender, EventArgs e)
         {
             //listBox1.Items.Add(Convert.ToString(array_size));
@@ -39,10 +51,27 @@ namespace Lab7
             list_index = listBox1.SelectedIndex;
             if (listBox1.SelectedIndex == 0) 
             {
-                
+                textBox2.Clear();
+                Random_array();
+                textBox2.ReadOnly = true;
+            }
+            else
+            {     
+                textBox2.ReadOnly = false;
+                textBox2.Clear();
 
             }
+            
             //Написать функцию для случайного массива и для ввода массива вручную
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 5) //(int)Keys.Space) 
+            {
+                textBox2.Clear();
+            }
+                
         }
 
 
